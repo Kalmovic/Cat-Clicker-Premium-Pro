@@ -72,6 +72,7 @@ var octopus = {
     incrementCounter: function(){
         model.currentCat.clickCount ++;
         catView.render();
+        adminView.render();     // solving the issue
     },
     //function runs when 'Admin' button is clicked.
     adminDisplay: function(){
@@ -156,7 +157,7 @@ var catListView = {
                 return function(){
                 octopus.setCurrentCat(catCopy);
                 catView.render();
-                octopus.incrementCounter(); //increments cat clicker
+                //removed octopus.incrementCounter from here
                 };
             })(cat));
 
